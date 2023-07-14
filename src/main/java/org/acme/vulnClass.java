@@ -1,23 +1,45 @@
 package org.acme;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.util.zip.ZipFile;
-import java.util.zip.ZipEntry;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-  public class vulnClass {
+public class vulnClass {
 
+    public void fetchUserDetails(String username) {
+        try {
+            // Establish database connection
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "username", "password");
 
-    public void extract(ZipFile zip) {
-        String toDir = "/my/target/directory/";
-        Enumeration entries = zip.entries();
-        
-        while (entries.hasMoreElements()) {
-            ZipEntry zipEntry = entries.nextElement();
-            File file = new File(toDir, zipEntry.getName());
-            InputStream istr = zipFile.getInputStream(zipEntry);
-            final OutputStream os = Files.newOutputStream(file.toPath());
-            bos  = new BufferedOutputStream(os);
-            IOUtils.copy(bis, bos);
+            // Create SQL query
+            String query = "SELECT * FROM users WHERE username = '" + username + "'";
+
+            // Execute SQL query
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // Process the results
+            if (resultSet.next()) {
+                String fetchedUsername = resultSet.getString("username");
+                String fetchedPassword = resultSet.getString("password");
+                System.out.println("Username: " + fetchedUsername + ", Password: " + fetchedPassword);
+            } else {
+                System.out.println("User not found!");
+            }
+
+            // Close the database connection
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        VulnerableClass vulnerable = new VulnerableClass();
+        String inputUsername = "admin'; DROP TABLE users;--";
+        vulnerable.fetchUserDetails(inputUsername);
+    }
 }
+
