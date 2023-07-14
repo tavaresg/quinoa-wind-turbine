@@ -37,7 +37,7 @@ public class vulnClass {
     }
 
     public static void main(String[] args) {
-        VulnerableClass vulnerable = new VulnerableClass();
+        vulnClass vulnerable = new vulnClass();
         String inputUsername = "admin'; DROP TABLE users;--";
         vulnerable.fetchUserDetails(inputUsername);
     }
