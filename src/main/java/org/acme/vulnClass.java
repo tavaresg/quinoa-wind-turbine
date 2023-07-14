@@ -13,7 +13,7 @@ import java.util.zip.ZipEntry;
         
         while (entries.hasMoreElements()) {
             ZipEntry zipEntry = entries.nextElement();
-            File file = new File(toDir, zipEntry.getName())
+            File file = new File(toDir, zipEntry.getName());
             InputStream istr = zipFile.getInputStream(zipEntry);
             final OutputStream os = Files.newOutputStream(file.toPath());
             bos  = new BufferedOutputStream(os);
