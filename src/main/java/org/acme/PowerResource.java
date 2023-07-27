@@ -1,4 +1,4 @@
-package org.acme;
+
 
 import io.smallrye.mutiny.Multi;
 import io.smallrye.reactive.messaging.kafka.Record;
