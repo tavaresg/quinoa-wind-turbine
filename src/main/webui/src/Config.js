@@ -13,7 +13,7 @@ export const SHOW_TOP = 5;
 
 // Mobile app
 export const ENABLE_TAPPING = true;
-export const ENABLE_SHAKING = false; //test
+export const ENABLE_SHAKING = false;
 export const ENABLE_BLOWING = false;
 export const ENABLE_SWIPING = false;
 
