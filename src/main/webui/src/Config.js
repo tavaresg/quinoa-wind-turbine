@@ -13,7 +13,11 @@ export const SHOW_TOP = 5;
 
 // Mobile app
 export const ENABLE_TAPPING = true;
+<<<<<<< HEAD
 export const ENABLE_SHAKING = true;
+=======
+export const ENABLE_SHAKING = false; //analisar
+>>>>>>> 9135956 (init false)
 export const ENABLE_BLOWING = false;
 export const ENABLE_SWIPING = false;
 
