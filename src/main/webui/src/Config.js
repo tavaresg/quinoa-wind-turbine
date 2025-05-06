@@ -12,7 +12,7 @@ export const NB_TAP_NEEDED_PER_USER = DEV_MODE ? 5 : 150;
 export const SHOW_TOP = 5;
 
 // Mobile app
-export const ENABLE_TAPPING = true;
+export const ENABLE_TAPPING = false;
 export const ENABLE_SHAKING = false;
 export const ENABLE_BLOWING = false;
 export const ENABLE_SWIPING = false;
