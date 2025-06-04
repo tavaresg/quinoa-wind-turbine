@@ -11,7 +11,7 @@ export const TAP_POWER = 15; // in MW
 export const NB_TAP_NEEDED_PER_USER = DEV_MODE ? 5 : 150;
 export const SHOW_TOP = 5;
 
-// Mobile app
+// Mobile app Settings
 export const ENABLE_TAPPING = true;
 export const ENABLE_SHAKING = false;
 export const ENABLE_BLOWING = false;
